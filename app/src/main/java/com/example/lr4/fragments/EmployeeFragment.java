@@ -10,16 +10,14 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
 
-public class UserFragment extends Fragment {
+public class EmployeeFragment extends Fragment {
 
-    ArrayList<Employee> employees = new ArrayList<Employee>();
+    ArrayList<Employee> employees = new ArrayList<>();
     ListView employeesList;
 
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -33,7 +31,7 @@ public class UserFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_user, container, false);
+        return inflater.inflate(R.layout.fragment_employee, container, false);
     }
     private void setInitialData()
     {
