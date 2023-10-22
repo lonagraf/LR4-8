@@ -1,10 +1,12 @@
-package com.example.lr4;
+package com.example.lr4.entities;
+
+import android.graphics.drawable.Drawable;
 
 public class Employee {
     private String name;
     private String jobPosition;
-    private int photoResource;
-    public Employee(String name, String jobPosition, int photo)
+    private Drawable photoResource;
+    public Employee(String name, String jobPosition, Drawable photo)
     {
         this.name = name;
         this.jobPosition = jobPosition;
@@ -26,11 +28,11 @@ public class Employee {
     {
         this.jobPosition = jobPosition;
     }
-    public int getPhotoResource()
+    public Drawable getPhotoResource()
     {
         return this.photoResource;
     }
-    public void setPhotoResource(int photoResource)
+    public void setPhotoResource(Drawable photoResource)
     {
         this.photoResource = photoResource;
     }

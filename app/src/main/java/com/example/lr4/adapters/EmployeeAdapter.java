@@ -1,4 +1,4 @@
-package com.example.lr4;
+package com.example.lr4.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,9 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.lr4.entities.Employee;
+import com.example.lr4.R;
 
 import java.util.List;
 
@@ -32,7 +35,7 @@ public class EmployeeAdapter extends ArrayAdapter<Employee> {
 
         Employee employee = employees.get(position);
 
-        photoView.setImageResource(employee.getPhotoResource());
+        photoView.setImageDrawable(employee.getPhotoResource());
         nameView.setText(employee.getName());
         positionView.setText(employee.getJobPosition());
 
