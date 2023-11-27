@@ -38,6 +38,22 @@ public class EmployeeFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        Thread load = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    binding.loadBar.post(()->binding.loadBar.setVisibility(View.VISIBLE));
+                    binding.employeesList.post(() -> binding.employeesList.setVisibility(view.GONE));
+                    Thread.sleep(3000);
+                    binding.loadBar.post(()->binding.loadBar.setVisibility(View.GONE));
+                    binding.employeesList.post(()->binding.employeesList.setVisibility(View.VISIBLE));
+                }
+                catch (InterruptedException e){
+                    e.printStackTrace();
+                }
+            }
+        });
+        load.start();
         employeeViewModel = new ViewModelProvider(getActivity()).get(EmployeeViewModel.class);
         setInitList(view);
         addEmployeeBtnInit();

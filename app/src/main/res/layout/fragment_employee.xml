@@ -6,7 +6,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.EmployeeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+        <ProgressBar
+            android:id="@+id/load_bar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/add_employee_btn"
@@ -18,9 +28,11 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintHorizontal_bias="0.9"
-            app:layout_constraintVertical_bias="0.95"/>
+            app:layout_constraintVertical_bias="0.95"
+            android:contentDescription="Add Employee"/>
         <ListView
             android:id="@+id/employeesList"
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         </ListView>
