@@ -15,6 +15,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.lr4.EmployeeViewModel;
 import com.example.lr4.R;
+import com.example.lr4.SettingsFragment;
 import com.example.lr4.adapters.EmployeeAdapter;
 import com.example.lr4.databinding.FragmentEmployeeBinding;
 
@@ -44,7 +45,7 @@ public class EmployeeFragment extends Fragment {
                 try {
                     binding.loadBar.post(()->binding.loadBar.setVisibility(View.VISIBLE));
                     binding.employeesList.post(() -> binding.employeesList.setVisibility(view.GONE));
-                    Thread.sleep(3000);
+                    Thread.sleep(5000);
                     binding.loadBar.post(()->binding.loadBar.setVisibility(View.GONE));
                     binding.employeesList.post(()->binding.employeesList.setVisibility(View.VISIBLE));
                 }
@@ -57,6 +58,7 @@ public class EmployeeFragment extends Fragment {
         employeeViewModel = new ViewModelProvider(getActivity()).get(EmployeeViewModel.class);
         setInitList(view);
         addEmployeeBtnInit();
+        settingsBtnInit();
     }
     private void setInitList(View view) {
         employeesList = binding.employeesList;
@@ -78,5 +80,12 @@ public class EmployeeFragment extends Fragment {
                .replace(R.id.main_fragment, new AddEmployeeFragment(), "add_employee")
                .addToBackStack(null)
                .commit();});
+    }
+
+    private void settingsBtnInit(){
+        binding.settingsBtn.setOnClickListener((view)->{getActivity().getSupportFragmentManager().beginTransaction()
+                .replace(R.id.main_fragment, new SettingsFragment(), "settings")
+                .addToBackStack(null)
+                .commit();});
     }
 }

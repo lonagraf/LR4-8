@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingsFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Введите имя" />
+
+        <EditText
+            android:id="@+id/surname"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Введите фамилию"
+            android:layout_marginTop="10dp"/>
+
+        <LinearLayout
+            android:padding="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Изменить шрифт"
+                android:textSize="20sp" />
+            <Spinner
+                android:id="@+id/change_font"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/fonts"/>
+        </LinearLayout>
+        <LinearLayout
+            android:padding="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Изменить размер"
+                android:textSize="20sp" />
+            <Spinner
+                android:id="@+id/change_size"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/sizes"/>
+        </LinearLayout>
+        <LinearLayout
+            android:padding="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Изменить цвет"
+                android:textSize="20sp" />
+            <Spinner
+                android:id="@+id/change_color"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/colors"/>
+        </LinearLayout>
+        <Button
+            android:id="@+id/saveBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Сохранить"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+
+
+
+</FrameLayout>
